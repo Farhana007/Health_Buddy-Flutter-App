@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:medi_check/views/add_pages.dart/add_weight.dart';
+import 'package:medi_check/views/add_pages.dart/calculate_bmi.dart';
 import 'package:medi_check/views/add_pages.dart/diseases_add.dart';
 import 'package:medi_check/views/add_pages.dart/doctor_add.dart';
 import 'package:medi_check/views/add_pages.dart/medicine_add.dart';
@@ -21,7 +23,9 @@ class _AddPageState extends State<AddPage> {
     "Save Diabetic/Blood Pressure/Fever Results",
     "Save Medicines Names",
     "Save Doctors Information",
-    "Save Diseases History"
+    "Save Diseases History",
+    "Calculate BMI",
+    "Save Weight History"
   ];
 
   //List Of Paths
@@ -29,7 +33,9 @@ class _AddPageState extends State<AddPage> {
     TestResultAddPage(),
     MedicineAddPage(),
     DoctorDetailAddPage(),
-    DiseasesAddPage()
+    DiseasesAddPage(),
+    CalculateBMIPage(),
+    AddWeight(),
   ];
 
   @override
@@ -48,7 +54,7 @@ class _AddPageState extends State<AddPage> {
             40.heightBox,
             Expanded(
                 child: ListView.builder(
-                    itemCount: 4,
+                    itemCount: _headLineL.length,
                     itemBuilder: (context, index) {
                       return Padding(
                         padding: EdgeInsets.symmetric(vertical: 15),
